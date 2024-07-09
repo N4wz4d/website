@@ -1,0 +1,650 @@
+/* Custom CSS for the navbar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #343a40;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0; /* Ensure there's some padding within the navbar */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 95%; /* Reduce the maximum width */
+    padding: 0 10px; /* Decrease the padding */
+}
+
+.navbar-brand {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.nav-link:hover {
+    color: #d4af37;
+}
+
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: flex;
+    }
+    
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #343a40;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .nav-link {
+        text-align: center;
+        padding: 15px;
+        border-top: 1px solid #484848;
+    }
+}
+
+.main-container {
+    display: flex;
+    margin-top: 60px; /* To account for the fixed navbar */
+    height: calc(100vh - 60px); /* Full height minus the navbar height */
+    overflow: hidden; /* Hide overflow to prevent scrollbar */
+}
+
+.image {
+    flex: 0 0 50%; /* Take up 50% of the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* White background for image area */
+    overflow: hidden; /* Hide overflow to prevent scrollbar */
+}
+
+.image img {
+    width: 400px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height proportionally */
+    border-radius: 50%; /* Keep the circular border radius if desired */
+    object-fit: cover; /* Ensure the image covers the circle area */
+    background-color: #ffffff; /* White background for image */
+}
+
+.description {
+    flex: 1; /* Take up the remaining width */
+    padding: 10px; /* Adjust the padding to make it smaller */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff; /* White background for description area */
+    animation: floatIn 1s ease-in-out forwards; /* Animation effect */
+    opacity: 0; /* Initially hidden */
+    overflow: hidden; /* Hide overflow to prevent scrollbar */
+}
+
+.description h1 {
+    margin: 0 0 5px 0; /* Adjust the margin around the heading */
+    font-size: 2em; /* Increase the font size of the heading */
+}
+
+
+.description p {
+    margin: 0;
+    font-size: 0.9em; /* Adjust the font size of the paragraph */
+}
+
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* about styling */
+
+/* Custom CSS for the about section */
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Cover the entire page height */
+    background-color: #f8f9fa; /* Light background color */
+    text-align: center; /* Center align text */
+}
+
+.about h1 {
+    margin-bottom: 20px;
+    
+}
+
+#about-text {
+    font-size: 2.6em; /* Three times bigger than before */
+}
+
+/* Circles */
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+}
+
+/* Container for circles */
+.circles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+
+
+
+/* Additional styles for services section */
+.service {
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropdown-toggle {
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* White text color */
+    padding: 15px 20px; /* Larger padding for button */
+    font-size: 1em; /* Font size */
+    border: none; /* Remove default border */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.dropdown-toggle:hover {
+    background-color: #292b2c; /* Darker background color on hover */
+}
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust as needed for spacing */
+    gap: 20px; /* Adjust spacing between cards */
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.card.disabled {
+    opacity: 0.5; /* Reduce opacity to indicate disabled state */
+    pointer-events: none; /* Disable pointer events */
+    filter: grayscale(100%); /* Optionally grayscale the card */
+}
+
+
+.card.hidden {
+    display: none;
+}
+
+.card.show {
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+.card a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* this is yourmod style */
+/* Center align the yourmode form */
+.yourmode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust height as needed */
+    background-color: #f2f2f2; /* Light gray background color */
+    text-align: center; /* Center align text inside the yourmode form */
+}
+
+/* Form style */
+.yourmode form {
+    max-width: 400px; /* Set maximum width for the form */
+    padding: 20px; /* Add padding around the form */
+    background-color: #fff; /* White background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.yourmode div {
+    margin-bottom: 15px; /* Add margin below each div */
+}
+
+.yourmode .radio-group {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly between elements */
+}
+
+.yourmode label {
+    font-size: 24px; /* Larger font size for emoji labels */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.yourmode input[type="radio"] {
+    display: none; /* Hide the radio buttons */
+}
+
+.yourmode input[type="radio"]:checked + label {
+    border: 2px solid #007bff; /* Add border to selected emoji */
+    border-radius: 4px; /* Rounded corners for selected emoji */
+    padding: 5px; /* Add padding around the selected emoji */
+}
+
+.yourmode button[type="submit"] {
+    background-color: #007bff; /* Blue submit button */
+    color: #fff; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 4px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.yourmode button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* end your mode style*/
+
+
+
+
+
+
+
+
+
+/* this is for contact us */
+/* Center align the contact form */
+/* Contact section styles */
+.contact {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 100vh; /* Ensure minimum height of viewport height */
+    width: 100%; /* Cover full width */
+    position: relative; /* Ensure it covers the entire page */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Vertical form style */
+.vertical-form {
+    max-width: 600px; /* Set maximum width for the form */
+    width: 100%; /* Ensure form spans entire width */
+    margin: 0 auto; /* Center align the form horizontally */
+    padding: 40px; /* Add padding inside the form */
+    background-color: #ffffff; /* White background for form */
+    border-radius: 8px; /* Rounded corners for form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for form */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+/*NEW NEW NEW */
+.vertical-form:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/*END END END */
+
+
+
+
+.vertical-form label {
+    display: block; /* Display labels as block */
+    text-align: left; /* Left-align labels */
+    font-weight: bold; /* Bold font for labels */
+    margin-bottom: 10px; /* Space below labels */
+    color: #333; /* Dark text color for labels */
+}
+
+
+
+.vertical-form input,
+.vertical-form textarea {
+    width: 100%; /* Occupy full width of the form */
+    padding: 15px; /* Padding inside input and textarea */
+    font-size: 16px; /* Font size for inputs */
+    border: 1px solid #ccc; /* Light border around inputs */
+    border-radius: 4px; /* Rounded corners for inputs */
+    margin-bottom: 20px; /* Space below form elements */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.vertical-form input:focus,
+.vertical-form textarea:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #6fbf73; /* Green border color on focus */
+}
+
+.vertical-form textarea {
+    height: 150px; /* Set height for textarea */
+}
+
+.vertical-form button {
+    background-color: #6fbf73; /* Green background for button */
+    color: #ffffff; /* White text color */
+    border: none; /* No border on button */
+    padding: 15px 30px; /* Padding inside button */
+    font-size: 18px; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners for button */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.vertical-form button:hover {
+    background-color: #55a25e; /* Darker green on button hover */
+}
+
+
+
+
+
+
+
+
+/* This is for footer */
+.footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 0;
+    text-align: left;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left, .footer-right {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-left {
+    text-align: center;
+}
+
+.footer-left h2 {
+    margin-bottom: 20px;
+}
+
+.footer-left p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.footer-left p i {
+    margin-right: 10px;
+}
+
+.socialmedia {
+    margin-top: 20px;
+}
+
+.socialmedia a {
+    color: #ecf0f1;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.socialmedia a:hover {
+    color: #3498db;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.author-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.description h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.description p {
+    font-size: 16px;
+    max-width: 400px;
+    text-align: center;
+    color: black;
+}
+
+.footer-bottom {
+    background-color: #1a252f;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-left, .footer-right {
+        width: 48%;
+    }
+
+    .author {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .author-image img {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+}
